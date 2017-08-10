@@ -15,7 +15,7 @@
   ],
   "databases": {
     "ut-classic-documents-sync-db": {
-      "server": "http://couchbase:8091",
+      "server": "http://couchbase-admin-service.sf-couchbase.svc.cluster.local:8091",
       "bucket": "ut-classic-documents",
       "sync": `function(doc) {channel(doc.channels);}`,
       "users": {
