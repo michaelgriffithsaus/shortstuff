@@ -1,0 +1,31 @@
+{
+  "interface": "0.0.0.0:4984",
+  "adminInterface": "0.0.0.0:4985",
+  "log": [
+    "CRUD",
+    "CRUD+",
+    "HTTP",
+    "HTTP+",
+    "Access",
+    "Cache",
+    "Shadow",
+    "Shadow+",
+    "Changes",
+    "Changes+"
+  ],
+  "databases": {
+    "ut-classic-documents-sync-db": {
+      "server": "http://couchbase:8091",
+      "bucket": "ut-classic-documents",
+      "sync": `function(doc) {channel(doc.channels);}`,
+      "users": {
+        "GUEST": {
+          "disabled": false,
+          "admin_channels": [
+            "*"
+          ]
+        }
+      }
+    }    
+  }
+}
